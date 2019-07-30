@@ -2,15 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { createGlobalStyle } from "styled-components";
+import Milford from "./fonts/MILFCD_B.woff";
+
 import App from "./components/App";
 
 const GlobalStyle = createGlobalStyle`
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background: #000000
-  color: #ffffff
+  @font-face {
+    font-family: Milford;
+    src: url('${Milford}') format('woff');
+  }
+  
+  font-family: Milford;
+  background: #000000;
+  color: #ffffff;
+}
+
+h1 {
+  text-transform: uppercase;
 }
 `;
 
