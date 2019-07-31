@@ -7,7 +7,6 @@ import l1zyBG from "../img/l1zy-transparent.png";
 import { Image } from "react-konva";
 
 const Background = ({ canvasDimensions }) => {
-  const { width } = canvasDimensions;
   const [image] = useImage(l1zyBG);
 
   return <Image image={image} />;

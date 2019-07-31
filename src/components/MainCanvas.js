@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { Stage, Layer } from "react-konva";
@@ -48,6 +49,7 @@ class MainCanvas extends Component {
   }
 
   render() {
+    const { audioLevel } = this.props;
     const { viewport } = this.state;
     const scale = Math.min(
       viewport.width / CANVAS_VIRTUAL_WIDTH,
@@ -56,20 +58,24 @@ class MainCanvas extends Component {
 
     return (
       <Stage
-        width={Math.min(window.innerWidth, CANVAS_VIRTUAL_WIDTH)}
+        width={Math.min(viewport.width, CANVAS_VIRTUAL_WIDTH)}
         height={viewport.height}
         scaleX={scale}
         scaleY={scale}
       >
         <Layer>
-          <Background canvasDimensions={viewport} />
+          <TheGlow audioLevel={audioLevel} />
         </Layer>
         <Layer>
-          <TheGlow />
+          <Background canvasDimensions={viewport} />
         </Layer>
       </Stage>
     );
   }
 }
+
+MainCanvas.propTypes = {
+  audioLevel: PropTypes.number.isRequired
+};
 
 export default MainCanvas;
