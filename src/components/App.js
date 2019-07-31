@@ -11,7 +11,6 @@ class App extends Component {
     return (
       <MainContainer>
         <MainCanvas />
-        <h1>New single</h1>
       </MainContainer>
     );
   }

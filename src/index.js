@@ -13,8 +13,10 @@ body {
     src: url('${Milford}') format('woff');
   }
   
+  padding: 0;
+  margin: 0;
   font-family: Milford;
-  background: #000000;
+  background: #12121C;
   color: #ffffff;
 }
 
